@@ -38,7 +38,7 @@
       }
     }
   },
-  "backend": {
+  "Handy Finder": {
     "commandName": "Project",
     "dotnetRunMessages": true,
     "environmentVariables": {

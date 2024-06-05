@@ -1,13 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
 namespace HandyFinder.Controllers {
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase {
+
+        private readonly IValuesService _valuesService;
+        public ValuesController(IValuesService valuesService) {
+            _valuesService = valuesService;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get() {
-            return new string[] {"value1", "value2"};
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Values))]
+        public IActionResult Get() {
+            Values value = _valuesService.GetValues();
+            return Ok(value);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(PostValues))]
+        public IActionResult Post([FromBody] PostValues values) {
+            Values value = _valuesService.PostValues(values);
+            return Ok(value);
         }
     }
 }
