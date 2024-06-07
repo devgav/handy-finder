@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace HandyFinder.Controllers {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase {
+    public class TestController : ControllerBase {
 
         private readonly IValuesService _valuesService;
-        public ValuesController(IValuesService valuesService) {
+        public TestController(IValuesService valuesService) {
             _valuesService = valuesService;
         }
 
-        [HttpGet]
+        [HttpGet("testing")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Values))]
         public IActionResult Get() {
             Values value = _valuesService.GetValues();
