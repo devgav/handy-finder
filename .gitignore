@@ -1,5 +1,7 @@
 backend/obj
-
+backend/bin
+frontend/.idea/
+backend/.idea/
 # Logs
 logs
 *.log
