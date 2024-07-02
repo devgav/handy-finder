@@ -1,7 +1,8 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { theme } from '../theme';
+import { theme } from '@/theme';
+import Navbar from "@/components/Navbar/navbar";
 
 export const metadata = {
   title: 'Handy Finder',
@@ -25,10 +26,12 @@ export default function RootLayout({ children }: { children: any }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
+        <title>Handy Finder</title>
       </head>
       <body>
         <MantineProvider theme={theme}>
-          {children}
+            <Navbar/>
+            {children}
         </MantineProvider>
       </body>
     </html>

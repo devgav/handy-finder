@@ -6,6 +6,7 @@ import classes from './navbar.module.css';
 
 const links = [
   { link: '/signin', label: 'SIGN IN' },
+  { link: '/signup', label: 'SIGN UP' },
 ];
 
 function Navbar() {
@@ -33,7 +34,7 @@ function Navbar() {
   
           <Group>
             <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">
-              {items}
+                {items}
             </Group>
           </Group>
         </div>
